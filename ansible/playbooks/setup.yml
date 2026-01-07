@@ -1,0 +1,30 @@
+---
+# BEX Automation - Setup Playbook
+# Playbook inicial para configuração de infraestrutura
+
+- name: BEX Infrastructure Setup
+  hosts: all
+  become: true
+  vars:
+    project_name: bex-automation
+    environment: production
+
+  tasks:
+    - name: Ensure required packages are installed
+      ansible.builtin.package:
+        name:
+          - curl
+          - git
+          - vim
+          - htop
+        state: present
+
+    - name: Create project directory
+      ansible.builtin.file:
+        path: "/opt/{{ project_name }}"
+        state: directory
+        mode: "0755"
+
+    - name: Display setup complete message
+      ansible.builtin.debug:
+        msg: "BEX Automation setup completed successfully!"
