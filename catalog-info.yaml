@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bex-automation
+  title: BEX Automation
+  description: Projeto de automação com Ansible, Terraform e CI/CD para infraestrutura como código
+  annotations:
+    github.com/project-slug: dbaricardo/bex-automation
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - automation
+    - ansible
+    - terraform
+    - iac
+    - bex
+  links:
+    - url: https://github.com/dbaricardo/bex-automation
+      title: GitHub Repository
+      icon: github
+spec:
+  type: infrastructure
+  lifecycle: production
+  owner: platform-team
+  system: bex-platform
